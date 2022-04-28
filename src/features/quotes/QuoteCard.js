@@ -1,5 +1,5 @@
 import React from "react";
-import quotesReducer, {upvoteQuote, downvoteQuote, removeQuote} from "./quotesSlice";
+import {upvoteQuote, downvoteQuote, removeQuote} from "./quotesSlice";
 import { useDispatch } from "react-redux";
 
 
