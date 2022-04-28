@@ -1,7 +1,12 @@
 import React from "react";
-import quotesReducer from "./quotesSlice";
+import quotesReducer, {upvoteQuote, downvoteQuote, removeQuote} from "./quotesSlice";
+import { useDispatch } from "react-redux";
+
 
 function QuoteCard(props) {
+
+  const dispatch = useDispatch()
+
   return (
     <div>
       <div className="card card-inverse card-success card-primary mb-3 text-center">
@@ -20,13 +25,13 @@ function QuoteCard(props) {
             role="group"
             aria-label="Basic example"
           >
-            <button type="button" className="btn btn-primary">
+            <button type="button" className="btn btn-primary" onClick={() => dispatch(upvoteQuote(props.quote.id))}>
               Upvote
             </button>
-            <button type="button" className="btn btn-secondary">
+            <button type="button" className="btn btn-secondary" onClick={() => dispatch(downvoteQuote(props.quote.id))}>
               Downvote
             </button>
-            <button type="button" className="btn btn-danger">
+            <button type="button" className="btn btn-danger" onClick={() => dispatch(removeQuote(props.quote.id))}>
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
