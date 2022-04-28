@@ -25,9 +25,7 @@ function QuoteForm() {
     // Create quote object from state
     // Pass quote object to action creator
     // Update component state to return to default state
-    e.preventDefault();
-    console.log(formData)
-    
+    e.preventDefault();    
     dispatch(addQuote(formData))
     setFormData({ content: "", author: "" });
   }

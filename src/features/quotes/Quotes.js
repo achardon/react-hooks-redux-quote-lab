@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 function Quotes() {
 
   const quotes = useSelector(state => state.quotes)
-  console.log(quotes)
 
   return (
     <div>
